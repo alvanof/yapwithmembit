@@ -41,14 +41,14 @@ const SavedIdeas = ({ savedIdeas, onRemove, onBack }) => {
                             <div className="absolute -top-3 -right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-10">
                                 <button
                                     onClick={() => copyToClipboard(idea.content)}
-                                    className="p-2 bg-neo-blue border-2 border-neo-black hover:scale-110 transition-transform shadow-neo-sm"
+                                    className="p-2 bg-white border-2 border-neo-black hover:scale-110 transition-transform shadow-neo-sm hover:bg-neo-blue"
                                     title="Copy"
                                 >
                                     <Copy size={20} />
                                 </button>
                                 <button
                                     onClick={() => onRemove(idea.id)}
-                                    className="p-2 bg-neo-pink border-2 border-neo-black hover:scale-110 transition-transform shadow-neo-sm"
+                                    className="p-2 bg-white border-2 border-neo-black hover:scale-110 transition-transform shadow-neo-sm hover:bg-neo-pink"
                                     title="Delete"
                                 >
                                     <Trash2 size={20} />
@@ -56,7 +56,7 @@ const SavedIdeas = ({ savedIdeas, onRemove, onBack }) => {
                             </div>
 
                             <div className="mb-4">
-                                <span className="bg-neo-black text-white px-3 py-1 font-black text-xs uppercase border-2 border-neo-black shadow-neo-sm transform -rotate-2 inline-block">
+                                <span className="bg-neo-main text-white px-3 py-1 font-black text-xs uppercase border-2 border-neo-black shadow-neo-sm transform -rotate-2 inline-block">
                                     {idea.type}
                                 </span>
                             </div>
@@ -65,14 +65,12 @@ const SavedIdeas = ({ savedIdeas, onRemove, onBack }) => {
                                 {idea.content}
                             </p>
 
-                            {idea.type === 'Tweet' && (
-                                <button
-                                    onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(idea.content)}`, '_blank')}
-                                    className="w-full mb-4 bg-[#1DA1F2] text-white py-3 font-black uppercase hover:bg-black border-2 border-neo-black transition-colors flex items-center justify-center gap-2 shadow-neo-sm"
-                                >
-                                    Post It 🐦
-                                </button>
-                            )}
+                            <button
+                                onClick={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(idea.content)}`, '_blank')}
+                                className="w-full mb-4 bg-black text-white py-3 font-black uppercase hover:bg-neo-main hover:text-white border-2 border-neo-black transition-colors flex items-center justify-center gap-2 shadow-neo-sm"
+                            >
+                                Post It 🐦
+                            </button>
 
                             <div className="mt-auto pt-4 border-t-3 border-neo-black border-dashed">
                                 <div className="text-xs font-black uppercase text-neo-black/50 mb-1">Source</div>

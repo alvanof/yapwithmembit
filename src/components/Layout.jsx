@@ -4,7 +4,7 @@ import MemeSidekick from './MemeSidekick';
 
 const Layout = ({ children }) => {
     return (
-        <div className="min-h-screen bg-neo-bg text-neo-black font-sans selection:bg-neo-selection selection:text-white overflow-x-hidden">
+        <div className="min-h-screen bg-neo-bg text-neo-black font-sans selection:bg-neo-main selection:text-white overflow-x-hidden">
             <MemeSidekick />
 
             {/* Fixed Header Container */}
@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
 
                         <div className="hidden md:flex gap-4">
                             <div className="bg-neo-green border-2 border-black px-3 py-1 font-bold shadow-neo-sm text-xs uppercase transform rotate-2 text-black">
-                                Beta v0.69
+                                Beta v0.67
                             </div>
                         </div>
                     </div>
@@ -50,17 +50,16 @@ const Layout = ({ children }) => {
 
             <footer className="border-t-3 border-neo-black bg-neo-white p-8 mt-12 relative z-10">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-bold uppercase">
-                    <p className="bg-neo-black text-white px-4 py-2 transform -rotate-1 shadow-neo-sm flex items-center gap-2">
-                        © 2025 MEMBIT 🤝 ALVANOF
-                    </p>
-                    <div className="flex gap-4">
+                    <p className="text-black px-4 py-2 transform -rotate-1 flex items-center gap-2 text-lg">
+                        © 2025
                         <a href="https://x.com/membit_ai" target="_blank" rel="noopener noreferrer" className="hover:text-neo-main hover:underline decoration-4 decoration-neo-pink">
-                            MEMBIT X
+                            MEMBIT
                         </a>
+                        🤝
                         <a href="https://x.com/al_vanof" target="_blank" rel="noopener noreferrer" className="hover:text-neo-main hover:underline decoration-4 decoration-neo-blue">
-                            ALVANOF X
+                            ALVANOF
                         </a>
-                    </div>
+                    </p>
                 </div>
             </footer>
         </div>

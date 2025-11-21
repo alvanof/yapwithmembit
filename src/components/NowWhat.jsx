@@ -104,7 +104,7 @@ const NowWhat = ({ contextData, onSave }) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-neo-black/80 z-50 flex items-center justify-center p-4"
+                        className="fixed inset-0 bg-neo-black/90 z-[100] flex items-center justify-center p-4"
                     >
                         <motion.div
                             initial={{ scale: 0.5, rotate: -10 }}
@@ -113,16 +113,16 @@ const NowWhat = ({ contextData, onSave }) => {
                             className="bg-neo-white border-4 border-neo-black w-full max-w-7xl h-[85vh] shadow-[16px_16px_0px_0px_#000] p-0 relative flex flex-col overflow-hidden"
                         >
                             {/* Modal Header - Fixed Visibility */}
-                            <div className="flex justify-between items-center border-b-4 border-neo-black bg-neo-yellow p-6 relative z-10">
-                                <h2 className="text-4xl font-black text-neo-black uppercase flex items-center gap-4">
-                                    <span className="text-5xl">🧠</span>
+                            <div className="flex justify-between items-center border-b-4 border-neo-black bg-neo-yellow p-4 relative z-10">
+                                <h2 className="text-2xl md:text-3xl font-black text-neo-black uppercase flex items-center gap-3">
+                                    <span className="text-3xl md:text-4xl">🧠</span>
                                     Big Brain Time
                                 </h2>
                                 <button
                                     onClick={() => setIsOpen(false)}
                                     className="bg-neo-pink border-3 border-neo-black p-2 hover:bg-white transition-colors shadow-neo-sm"
                                 >
-                                    <X size={32} className="text-black" />
+                                    <X size={24} className="text-black" />
                                 </button>
                             </div>
 

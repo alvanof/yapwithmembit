@@ -63,7 +63,7 @@ const PostCard = ({ post, index }) => {
                         href={post.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-neo-black text-white p-2 hover:bg-neo-main transition-colors border-2 border-transparent hover:border-neo-black shadow-neo-sm"
+                        className="bg-white text-neo-black p-2 hover:bg-neo-main hover:text-white transition-colors border-2 border-neo-black shadow-neo-sm"
                     >
                         <ExternalLink size={16} />
                     </a>
