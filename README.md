@@ -4,7 +4,7 @@
 
 Built with **React**, **Vite**, and **Tailwind CSS**, it integrates the **Membit API** for real-time trend data and **Google Gemini API** for creative content generation.
 
-![App Screenshot](https://via.placeholder.com/800x400?text=LETS+YAP+WITH+MEMBIT)
+![App Screenshot](https://i.ibb.co.com/wHZsD64/Screenshot-2025-11-22-110111.png)
 
 ## Features
 
@@ -58,8 +58,9 @@ Built with **React**, **Vite**, and **Tailwind CSS**, it integrates the **Membit
     Visit `http://localhost:5173`
 
 
+
 or...
-try just try now
+just try now
 ## [https://yapwithmembit.vercel.app/]
 
 ## Design Philosophy
