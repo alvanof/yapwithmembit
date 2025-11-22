@@ -13,7 +13,7 @@ const SavedIdeas = ({ savedIdeas, onRemove, onBack }) => {
             <div className="mb-12 flex items-center gap-6">
                 <button
                     onClick={onBack}
-                    className="bg-white border-3 border-neo-black p-4 hover:bg-neo-black hover:text-white transition-colors shadow-neo"
+                    className="bg-white border-3 border-neo-black p-4 hover:bg-neo-main hover:text-white transition-colors shadow-neo"
                 >
                     <ArrowLeft size={32} className="text-inherit" />
                 </button>

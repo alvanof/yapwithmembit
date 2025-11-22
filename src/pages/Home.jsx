@@ -87,6 +87,20 @@ function Home({ membitKey, setMembitKeyState, isKeySet, setIsKeySet, savedIdeas,
                                 </p>
                             </motion.div>
 
+                            <motion.div
+                                initial={{ x: 100, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ delay: 0.2 }}
+                                className="absolute top-0 right-0 md:right-10"
+                            >
+                                <button
+                                    onClick={() => setCurrentView('saved')}
+                                    className="bg-neo-pink border-3 border-neo-black px-6 py-3 font-black shadow-neo hover:translate-y-1 hover:shadow-none transition-all flex items-center gap-2 text-xl transform -rotate-2"
+                                >
+                                    💾 STASH ({savedIdeas.length})
+                                </button>
+                            </motion.div>
+
                             <div className="flex flex-wrap justify-center gap-6 max-w-5xl">
                                 {topics.map((topic, i) => (
                                     <motion.button
@@ -95,7 +109,7 @@ function Home({ membitKey, setMembitKeyState, isKeySet, setIsKeySet, savedIdeas,
                                         whileTap={{ scale: 0.9 }}
                                         onClick={() => handleTopicClick(topic)}
                                         className={`
-                      border-3 border-neo-black px-8 py-4 text-2xl font-black uppercase shadow-neo transition-all text-neo-black
+                      border-3 border-neo-black px-8 py-4 text-2xl font-black uppercase shadow-neo transition-all text-neo-black hover:bg-neo-main hover:text-white
                       ${i % 3 === 0 ? 'bg-neo-yellow' : i % 3 === 1 ? 'bg-neo-pink' : 'bg-neo-blue'}
                     `}
                                     >
