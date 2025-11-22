@@ -58,11 +58,6 @@ Built with **React**, **Vite**, and **Tailwind CSS**, it integrates the **Membit
     Visit `http://localhost:5173`
 
 
-
-or...
-just try now
-## [https://yapwithmembit.vercel.app/]
-
 ## Design Philosophy
 
 **"Purple Neobrutalism"**
@@ -78,3 +73,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ---
 
 **Built with 💜 by Alvanof & Membit**
+
+try now
+[https://yapwithmembit.vercel.app/]
