@@ -4,7 +4,7 @@
 
 Built with **React**, **Vite**, and **Tailwind CSS**, it integrates the **Membit API** for real-time trend data and **Google Gemini API** for creative content generation.
 
-![App Screenshot](https://i.ibb.co.com/wHZsD64/Screenshot-2025-11-22-110111.png)
+[(https://i.ibb.co.com/wHZsD64/Screenshot-2025-11-22-110111.png)]
 
 ## Features
 
