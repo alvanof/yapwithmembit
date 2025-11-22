@@ -57,18 +57,9 @@ Built with **React**, **Vite**, and **Tailwind CSS**, it integrates the **Membit
 4.  **Open in Browser**
     Visit `http://localhost:5173`
 
-
-## Design Philosophy
-
-**"Purple Neobrutalism"**
-- **Bold Borders**: Thick black lines everywhere.
-- **Vibrant Colors**: High-contrast Purple (`#A6A6FF`), Yellow, Pink, and Green.
-- **Playful UI**: Rotated elements, heavy shadows, and raw aesthetics.
-- **Meme-Ready**: Designed to feel like the internet culture it serves.
-
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Open source for all, feel free to use, modify, and distribute.
 
 ---
 
