@@ -16,18 +16,22 @@ const TrendingFeed = ({ query, selectedCluster, onClusterSelect }) => {
                 console.log("Fetching clusters for query:", query); // DEBUG
                 const data = await fetchTrendingClusters(query);
                 console.log("Clusters data received:", data); // DEBUG
+
+                let clustersData = [];
                 if (Array.isArray(data)) {
-                    setClusters(data);
+                    clustersData = data;
                 } else if (data && Array.isArray(data.clusters)) {
-                    setClusters(data.clusters);
+                    clustersData = data.clusters;
                 } else if (data && Array.isArray(data.data)) {
-                    setClusters(data.data);
+                    clustersData = data.data;
                 } else {
-                    console.log("Unexpected data format or empty"); // DEBUG
-                    setClusters([]);
+                    console.warn("Unexpected data format:", data); // DEBUG
                 }
+
+                setClusters(clustersData);
             } catch (error) {
                 console.error("Error loading clusters:", error);
+                setClusters([]);
             }
             setLoading(false);
         };
@@ -87,35 +91,46 @@ const TrendingFeed = ({ query, selectedCluster, onClusterSelect }) => {
             ) : (
                 /* Otherwise, show the Clusters List */
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {clusters.slice(0, 9).map((cluster, index) => (
-                        <motion.div
-                            key={index}
-                            whileHover={{ scale: 1.05, rotate: Math.random() * 4 - 2 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => handleClusterClick(cluster)}
-                            className="cursor-pointer bg-white border-3 border-neo-black p-6 shadow-neo hover:shadow-neo-lg transition-all relative overflow-hidden group"
-                        >
-                            <div className="absolute top-0 right-0 bg-neo-yellow border-l-3 border-b-3 border-neo-black px-3 py-1 font-black text-xs uppercase">
-                                {cluster.volume || 'HOT'}
-                            </div>
+                    {loading ? (
+                        <div className="col-span-full text-center py-20">
+                            <p className="text-2xl font-black uppercase animate-pulse">Searching for Trends...</p>
+                        </div>
+                    ) : clusters.length > 0 ? (
+                        clusters.slice(0, 9).map((cluster, index) => (
+                            <motion.div
+                                key={index}
+                                whileHover={{ scale: 1.05, rotate: Math.random() * 4 - 2 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => handleClusterClick(cluster)}
+                                className="cursor-pointer bg-white border-3 border-neo-black p-6 shadow-neo hover:shadow-neo-lg transition-all relative overflow-hidden group"
+                            >
+                                <div className="absolute top-0 right-0 bg-neo-yellow border-l-3 border-b-3 border-neo-black px-3 py-1 font-black text-xs uppercase">
+                                    {cluster.volume || 'HOT'}
+                                </div>
 
-                            <h3 className="text-2xl font-black uppercase leading-tight mb-4 mt-2 group-hover:text-neo-main transition-colors">
-                                {cluster.label.replace('Cluster ', '')}
-                            </h3>
+                                <h3 className="text-2xl font-black uppercase leading-tight mb-4 mt-2 group-hover:text-neo-main transition-colors">
+                                    {cluster.label.replace('Cluster ', '')}
+                                </h3>
 
-                            <p className="text-sm font-bold text-gray-600 line-clamp-3 mb-4 font-mono">
-                                {cluster.summary}
-                            </p>
+                                <p className="text-sm font-bold text-gray-600 line-clamp-3 mb-4 font-mono">
+                                    {cluster.summary}
+                                </p>
 
-                            <div className="flex gap-2 flex-wrap">
-                                {cluster.keywords?.slice(0, 3).map((keyword, i) => (
-                                    <span key={i} className="text-xs font-black bg-neo-bg border-2 border-neo-black px-2 py-1 uppercase">
-                                        #{keyword}
-                                    </span>
-                                ))}
-                            </div>
-                        </motion.div>
-                    ))}
+                                <div className="flex gap-2 flex-wrap">
+                                    {cluster.keywords?.slice(0, 3).map((keyword, i) => (
+                                        <span key={i} className="text-xs font-black bg-neo-bg border-2 border-neo-black px-2 py-1 uppercase">
+                                            #{keyword}
+                                        </span>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        ))
+                    ) : (
+                        <div className="col-span-full text-center py-20">
+                            <p className="text-2xl font-black uppercase text-neo-black">No clusters found for "{query}"</p>
+                            <p className="text-lg font-bold text-gray-600 mt-2">Try a different topic.</p>
+                        </div>
+                    )}
                 </div>
             )}
         </div>

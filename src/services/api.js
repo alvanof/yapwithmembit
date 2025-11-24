@@ -11,11 +11,14 @@ export const setMembitKey = (key) => {
 };
 
 export const fetchTrendingClusters = async (query = 'technology', limit = 10) => {
-    if (!membitClient) return [];
+    if (!membitClient) {
+        console.warn("Membit client not initialized");
+        return [];
+    }
     try {
         console.log("Calling SDK cluster_search:", query);
         const result = await membitClient.cluster_search(query, { limit });
-        console.log("SDK Result:", result);
+        console.log("SDK Result (Raw):", result);
         return result;
     } catch (error) {
         console.error("Error fetching clusters:", error);
